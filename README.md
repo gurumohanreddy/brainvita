@@ -1,2 +1,0 @@
-# brainvita
-Hackathon_jQuery
