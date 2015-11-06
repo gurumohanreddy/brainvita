@@ -21,23 +21,19 @@ body{
 	display: inline-block;
 	margin: 1.3vh;
 	border-radius: 50%;
-	.rows{
-		width:9vh;
-		height:9vh;
-		display: inline-block;
-		margin: 0 ;
-		border-radius: 50%;
 
 		&.marble {
 			background: radial-gradient(circle at 100px 100px, #5cabff, #000);
 		}
-	}
+
 }
 .empty{
+	background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+	box-shadow: 5px 5px 5px grey;
 	width:9vh;
 	height:9vh;
 	display: inline-block;
-	margin: 0 ;
+	margin: 1.3vh;
 	border-radius: 50%;
 
 }
