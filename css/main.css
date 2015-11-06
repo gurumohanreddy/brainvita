@@ -23,5 +23,5 @@ body {
 .row1 {
   margin-top: 4vh; }
 
-#empty {
+.empty {
   background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%); }
