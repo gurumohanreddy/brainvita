@@ -59,10 +59,6 @@
         }
       }
 
-      // $(this).addClass('marble').addClass('slot').removeClass('empty');
-      // $(movable).removeClass('marble').removeClass('slot').addClass('empty');
-      // refreshListeners();
-      // movable=0;
 
     }
 
@@ -70,7 +66,6 @@
       $(passingEmpty).addClass('marble').addClass('slot').removeClass('empty');
       $(movable).removeClass('marble').removeClass('slot').addClass('empty');
       var tingu = gameRow.toString()+"\\."+gameColumn.toString();
-      console.log(tingu);
       $('#'+tingu).removeClass('marble').removeClass('slot').addClass('empty');
       refreshListeners();
       movable=0;
