@@ -1,5 +1,6 @@
 body {
-  background-image: url("1.jpg"); }
+  background-image: url("1.jpg");
+  background-repeat: no-repeat; }
 
 #circle {
   width: 93vh;
@@ -11,17 +12,29 @@ body {
   text-align: center;
   background-image: url("wood.jpg"); }
 
-.rows {
-  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+.slot {
+  background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
   box-shadow: 5px 5px 5px grey;
   width: 9vh;
   height: 9vh;
   display: inline-block;
-  margin: 1.3vh 2px;
+  margin: 1.3vh;
+  border-radius: 50%; }
+  .slot .rows {
+    width: 9vh;
+    height: 9vh;
+    display: inline-block;
+    margin: 0;
+    border-radius: 50%; }
+    .slot .rows.marble {
+      background: radial-gradient(circle at 100px 100px, #5cabff, #000); }
+
+.empty {
+  width: 9vh;
+  height: 9vh;
+  display: inline-block;
+  margin: 0;
   border-radius: 50%; }
 
 .row1 {
   margin-top: 4vh; }
-
-.empty {
-  background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%); }
