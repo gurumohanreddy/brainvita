@@ -10,6 +10,8 @@
     var emptyRows = null;
     var emptyColumn = null;
     var passingEmpty =null;
+    var gameRow = null;
+    var gameColumn = null;
     refreshListeners();
     function refreshListeners(){
       $('.empty').off('click');
@@ -38,6 +40,8 @@
 
       if (rows === emptyRows) {
           if (Math.abs(column-emptyColumn)===2) {
+            gameColumn = Math.min(column,emptyColumn)+1;
+            gameRow = rows;
             replacable();
           }
           else {
@@ -46,6 +50,8 @@
       }
       else if (column = emptyColumn) {
         if (Math.abs(rows-emptyRows)===2) {
+            gameRow = Math.min(rows,emptyRows)+1;
+            gameColumn = column;
               replacable();
         }
         else {
@@ -63,6 +69,9 @@
     var replacable = function(){
       $(passingEmpty).addClass('marble').addClass('slot').removeClass('empty');
       $(movable).removeClass('marble').removeClass('slot').addClass('empty');
+      var tingu = gameRow.toString()+"\\."+gameColumn.toString();
+      console.log(tingu);
+      $('#'+tingu).removeClass('marble').removeClass('slot').addClass('empty');
       refreshListeners();
       movable=0;
     }
