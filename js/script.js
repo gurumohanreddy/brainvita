@@ -1,5 +1,6 @@
   $(document).ready(function(){
-    brainvita();
+
+      brainvita();
   });
 
   function brainvita(){
@@ -12,6 +13,7 @@
     var passingEmpty =null;
     var gameRow = null;
     var gameColumn = null;
+    var tingu = null;
     refreshListeners();
     function refreshListeners(){
       $('.empty').off('click');
@@ -42,6 +44,10 @@
           if (Math.abs(column-emptyColumn)===2) {
             gameColumn = Math.min(column,emptyColumn)+1;
             gameRow = rows;
+            tingu = gameRow.toString()+"\\."+gameColumn.toString();
+            if($('#'+tingu).hasClass('empty')){
+              return;
+            }
             replacable();
           }
           else {
@@ -52,6 +58,10 @@
         if (Math.abs(rows-emptyRows)===2) {
             gameRow = Math.min(rows,emptyRows)+1;
             gameColumn = column;
+            tingu = gameRow.toString()+"\\."+gameColumn.toString();
+            if($('#'+tingu).hasClass('empty')){
+              return;
+            }
               replacable();
         }
         else {
@@ -65,10 +75,13 @@
     var replacable = function(){
       $(passingEmpty).addClass('marble').addClass('slot').removeClass('empty');
       $(movable).removeClass('marble').removeClass('slot').addClass('empty');
-      var tingu = gameRow.toString()+"\\."+gameColumn.toString();
+
       $('#'+tingu).removeClass('marble').removeClass('slot').addClass('empty');
       refreshListeners();
       movable=0;
     }
 
 }
+//gameRow,gameColumn are stored inorder to identify the middle slot value so that we can empty it.
+//emptyRows,emptyColumn are the droppable slot value.
+//tingu is a variable used to store the gameRow,gameColumn value after converting it to string so that we cab pass as element in Jquery.
